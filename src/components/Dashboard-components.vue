@@ -199,6 +199,13 @@
                                         <div v-if="hover" class="d-flex transition-fast-in-fast-out blue v-card--reveal display-3 white--text" style="height: 100%;">
                                             <v-btn rounded color="white">
                                                 <v-icon>mid-cart-outlined</v-icon>
+                                                Buy
+                                            </v-btn>
+                                            <v-btn fab small color="white" class="ml-2">
+                                                <v-icon color="black">mdi-content-copy</v-icon>
+                                            </v-btn>
+                                            <v-btn fab small color="white" class="ml-2">
+                                                <v-icon color="black">mdi-heart-outline</v-icon>
                                             </v-btn>
                                         </div>
                                     </v-expand-transition>
@@ -206,6 +213,49 @@
                             </v-hover>
                         </v-col>
                     </v-row>
+                </v-col>
+                <v-col cols="12" sm="3" class="mt-n3 pr-0 pb-0">
+                    <v-toolbar flat outlined>
+
+                    </v-toolbar>
+                </v-col>
+                <v-col cols="12" sm="3" class="mt-n3 px-0 pb-0">
+                    <v-toolbar flat outlined>
+                        <v-btn icon class="mr-1">
+                            <v-icon color="grey">mdi-chevron-up</v-icon>
+                        </v-btn>
+                        <v-divider vertical></v-divider>
+                    </v-toolbar>
+                </v-col>
+                <v-col cols="12" sm="3" class="mt-n3 px-0 pb-0">
+                    <v-toolbar flat outlined class="text-center">
+                        <v-pagination v-model="page" :length="4"></v-pagination>
+                    </v-toolbar>
+                </v-col>
+                <v-col cols="12" sm="3" class="mt-n3 pl-0 pb-0">
+                    <v-toolbar flat outlined>
+                        <v-btn icon class="mr-1">
+                            <v-icon color="grey">mdi-chevron-down</v-icon>
+                        </v-btn>
+                        <v-divider vertical></v-divider>
+                    </v-toolbar>
+                </v-col>
+            </v-row>
+        </v-card>
+        <v-card color="#EFF0F2" height="250px" tile flat dark class="d-flex align-center justify-center mt-n10 card2">
+            <v-row>
+                <v-col cols="12" sm="12">
+                    <h4 class="text-center black--text mt-10">SUBSCRIBE TO OUR NEWSLETTER</h4>
+                </v-col>
+                <v-col cols="12" sm="12">
+                    <h6 class="text-center grey--text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur dicta voluptas voluptatem. Numquam veniam rerum alias nisi praesentium voluptas animi saepe id eveniet tenetur cumque aspernatur, libero beatae molestiae ratione.
+                    </h6>
+                </v-col>
+                <v-col cols="12" sm="12">
+                    <v-card flat color="transparent" class="d-flex justify-center">
+                        <v-text-field placeholder="Enter Your Emal" rounded class="shrink" background-color="grey" filled append-icon="mdi-email-outline" dense></v-text-field>
+                    </v-card>
                 </v-col>
             </v-row>
         </v-card>
@@ -215,6 +265,7 @@
 <script>
     export default {
         data: () => ({
+            page: 1,
             items:[
                 {
                     text: "Home",
@@ -406,7 +457,7 @@
     justify-content: center;
     opacity: .5;
     position: absolute;
-    widows: 100%;
+    width: 100%;
 }
 .card1{
     z-index: 10;
